@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <title>Heart Auscultation Quiz | เกมฝึกตำแหน่งฟังเสียงหัวใจ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="eyebrow">NURSING SKILLS • PRACTICE QUIZ</div>
+      <h1>เกมฝึกตำแหน่งฟังเสียงหัวใจ</h1>
+      <p>Heart Auscultation: Identify the listening area</p>
+    </header>
+
+    <section id="intro" class="panel intro-panel">
+      <div class="intro-icon" aria-hidden="true">♥</div>
+      <h2>พร้อมทบทวนแล้วหรือยัง?</h2>
+      <p>ระบุตำแหน่ง Aortic, Pulmonic, Tricuspid และ Mitral จากหมายเลขบนภาพทรวงอก</p>
+      <ul class="rules">
+        <li>มีคำถามทั้งหมด 4 ข้อ โดยสุ่มลำดับทุกครั้งที่เริ่มเกม</li>
+        <li>หากตอบผิด สามารถลองตอบใหม่ได้ไม่จำกัดครั้ง</li>
+        <li>เมื่อตอบถูก จะแสดงคำอธิบายและภาพเฉลยก่อนเข้าสู่ข้อถัดไป</li>
+      </ul>
+      <button id="startBtn" class="primary-btn">เริ่มทำแบบทดสอบ</button>
+    </section>
+
+    <section id="quiz" class="panel quiz-panel hidden" aria-live="polite">
+      <div class="quiz-top">
+        <span id="progressLabel">ข้อ 1 จาก 4</span>
+        <span id="scoreLabel">ตอบถูก 0/4</span>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      <p class="question-kicker">คำถาม</p>
+      <h2 id="questionText">ตำแหน่งหมายเลขอะไร?</h2>
+      <p class="instruction">เลือกหมายเลขจากภาพด้านล่าง</p>
+      <div class="image-frame">
+        <img id="questionImage" src="assets/question.png" alt="ภาพทรวงอกแสดงตำแหน่งหมายเลข 1 ถึง 9 สำหรับฝึกระบุตำแหน่งฟังเสียงหัวใจ">
+      </div>
+      <div id="feedback" class="feedback hidden" role="status"></div>
+      <div id="answerChoices" class="choices" aria-label="ตัวเลือกคำตอบ"></div>
+      <p class="small-note">ตอบผิดได้ไม่จำกัดครั้ง ระบบจะไปข้อถัดไปเมื่อตอบถูกเท่านั้น</p>
+    </section>
+
+    <section id="result" class="panel result-panel hidden">
+      <div class="success-mark">✓</div>
+      <h2>ทำแบบทดสอบครบแล้วค่ะ</h2>
+      <p id="finalScore">ตอบถูกครบ 4 ตำแหน่ง</p>
+      <h3>สรุปเฉลยตำแหน่งฟังเสียงหัวใจ</h3>
+      <div class="image-frame summary-image">
+        <img src="assets/answer_all.png" alt="ภาพเฉลยรวมตำแหน่งฟังเสียงหัวใจทั้งสี่ตำแหน่ง">
+      </div>
+      <div class="answer-summary">
+        <article><strong>Aortic — หมายเลข 1</strong><span>2nd ICS to the right sternal border</span></article>
+        <article><strong>Pulmonic — หมายเลข 2</strong><span>2nd ICS to the left sternal border</span></article>
+        <article><strong>Tricuspid — หมายเลข 3</strong><span>5th ICS to the lower left sternal border</span></article>
+        <article><strong>Mitral — หมายเลข 4</strong><span>Apex, PMI &amp; 5th ICS at MCL</span></article>
+      </div>
+      <button id="restartBtn" class="primary-btn">เริ่มใหม่ (สุ่มคำถามอีกครั้ง)</button>
+    </section>
+  </main>
+
+  <div id="answerModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="correct-tag">✓ ถูกต้องค่ะ</div>
+          <h2 id="modalTitle">เฉลยคำตอบ</h2>
+        </div>
+        <button id="closeModalBtn" class="close-btn" aria-label="ปิดหน้าต่างเฉลย">×</button>
+      </div>
+      <p id="explanationText" class="explanation"></p>
+      <div class="image-frame answer-image-frame">
+        <img id="answerImage" src="assets/answer_aortic.png" alt="ภาพเฉลยตำแหน่งฟังเสียงหัวใจ">
+      </div>
+      <button id="nextBtn" class="primary-btn">ข้อต่อไป</button>
+    </div>
+  </div>
+
+  <footer>สื่อทบทวนทักษะการตรวจร่างกาย • Heart Auscultation Quiz</footer>
+  <script src="script.js"></script>
+</body>
+</html>
