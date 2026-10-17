@@ -79,7 +79,7 @@
     feedback.textContent = "";
     choices.replaceChildren();
 
-    for (let n = 1; n <= 9; n++) {
+    for (let n = 1; n <= 4; n++) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "choice-btn";
