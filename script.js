@@ -138,7 +138,7 @@
     modal.classList.add("hidden");
     modalOpen = false;
     feedback.className = "feedback";
-    feedback.textContent = "ตอบถูกแล้วค่ะ กด “ข้อต่อไป” เพื่อดำเนินเกมต่อ";
+    feedback.textContent = "ตอบถูกแล้วค่ะ กด “ข้อต่อไป” เพื่อดำเนินเกมส์ต่อ";
     // Restore a continue action in the quiz when the modal is closed.
     const continueBtn = document.createElement("button");
     continueBtn.type = "button";
