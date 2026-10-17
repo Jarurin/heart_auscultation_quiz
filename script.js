@@ -73,7 +73,7 @@
     $("progressLabel").textContent = `ข้อ ${currentIndex + 1} จาก ${order.length}`;
     $("scoreLabel").textContent = `ตอบถูก ${correctCount}/${order.length}`;
     $("progressBar").style.width = `${(currentIndex / order.length) * 100}%`;
-    $("questionText").textContent = `ตำแหน่งหมายเลขอะไร คือ ตำแหน่งที่ใช้ฟังเสียงหัวใจใน “ตำแหน่ง ${q.name}”`;
+    $("questionText").textContent = `ตำแหน่งหมายเลขอะไร คือ ตำแหน่งที่ใช้ฟังเสียงลิ้นหัวใจใน “ตำแหน่ง ${q.name}”`;
     $("questionImage").src = "assets/question.png";
     feedback.className = "feedback hidden";
     feedback.textContent = "";
