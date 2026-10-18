@@ -3,31 +3,31 @@
 
   const questions = [
     {
-      id: "aortic",
-      name: "Aortic",
+      id: "aortic valve",
+      name: "Aortic valve",
       correct: 1,
-      explanation: "ตำแหน่ง Aortic คือตำแหน่ง 2nd ICS to the right sternal border",
+      explanation: "ตำแหน่ง Aortic valve คือตำแหน่ง 2nd ICS to the right sternal border",
       image: "assets/answer_aortic.png"
     },
     {
-      id: "pulmonic",
-      name: "Pulmonic",
+      id: "pulmonic valve",
+      name: "Pulmonic valve",
       correct: 2,
-      explanation: "ตำแหน่ง Pulmonic คือตำแหน่ง 2nd ICS to the left sternal border",
+      explanation: "ตำแหน่ง Pulmonic valve คือตำแหน่ง 2nd ICS to the left sternal border",
       image: "assets/answer_pulmonic.png"
     },
     {
-      id: "tricuspid",
-      name: "Tricuspid",
+      id: "tricuspid valve",
+      name: "Tricuspid valve",
       correct: 3,
-      explanation: "ตำแหน่ง Tricuspid คือตำแหน่ง 5th ICS to the lower left sternal border",
+      explanation: "ตำแหน่ง Tricuspid valve คือตำแหน่ง 5th ICS to the lower left sternal border",
       image: "assets/answer_tricuspid.png"
     },
     {
-      id: "mitral",
-      name: "Mitral",
+      id: "mitral valve",
+      name: "Mitral valve",
       correct: 4,
-      explanation: "ตำแหน่ง Mitral คือตำแหน่ง Apex, PMI & 5th ICS at MCL",
+      explanation: "ตำแหน่ง Mitral valve คือตำแหน่ง Apex, PMI & 5th ICS at MCL",
       image: "assets/answer_mitral.png"
     }
   ];
