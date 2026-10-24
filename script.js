@@ -23,7 +23,7 @@ modal.addEventListener("click",event=>{if(event.target===modal){/* keep modal op
 document.addEventListener("keydown",event=>{if(event.key==="Escape"&&modalOpen)event.preventDefault();});
 })();
 
-const STATS_URL = "1WWti2uft9Tr2o86_DBoxuFTrVN9aZZb_71r5K5OmGew";
+const STATS_URL = "https://script.google.com/a/macros/msu.ac.th/s/AKfycbyB4Ydw1c16MFGyTBcKXJti64OyyDf13Ma24Q7ywvkgwNChCHhEubCdkNKUuUilJRuZMw/exec";
 
 // สร้างรหัสสุ่มใหม่เมื่อเริ่มเล่นแต่ละครั้ง
 let gameSession = null;
