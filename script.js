@@ -22,3 +22,51 @@ $("closeModalBtn").addEventListener("click",()=>{modal.classList.add("hidden");m
 modal.addEventListener("click",event=>{if(event.target===modal){/* keep modal open */}});
 document.addEventListener("keydown",event=>{if(event.key==="Escape"&&modalOpen)event.preventDefault();});
 })();
+
+const STATS_URL = "1WWti2uft9Tr2o86_DBoxuFTrVN9aZZb_71r5K5OmGew";
+
+// สร้างรหัสสุ่มใหม่เมื่อเริ่มเล่นแต่ละครั้ง
+let gameSession = null;
+
+function startGameSession(gameName) {
+  gameSession = crypto.randomUUID();
+
+  sendGameEvent({
+    game: gameName,
+    event: "start",
+    session: gameSession
+  });
+}
+
+function recordAnswer(gameName, isCorrect) {
+  sendGameEvent({
+    game: gameName,
+    event: "answer",
+    result: isCorrect ? "correct" : "incorrect",
+    session: gameSession
+  });
+}
+
+function finishGame(gameName) {
+  sendGameEvent({
+    game: gameName,
+    event: "finish",
+    session: gameSession
+  });
+}
+
+function sendGameEvent(data) {
+  if (!gameSession) return;
+
+  fetch(STATS_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(data),
+    keepalive: true
+  }).catch(error => {
+    console.error("ส่งสถิติไม่สำเร็จ", error);
+  });
+}
